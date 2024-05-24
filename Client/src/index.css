@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
+
+ 
+
+
+ :root  {    
+  background-color: rgb(2 6 23);
+ }
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Work Sans", sans-serif;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /*My table scrolbars*/
+  .scrollbar::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(66, 245, 141);
+  }
+  .scrollbar::-webkit-scrollbar {
+    @apply h-3;
+    @apply w-3;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-slate-200;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply  to-slate-900 rounded-sm;
+  }
+
+  /*My body scrollbars*/
+  body::-webkit-scrollbar {
+    scroll-behaviour: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(66, 245, 141);
+  }
+  body::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  body::-webkit-scrollbar-track {
+    @apply bg-gradient-to-b from-slate-100 to-gray-100;
+  }
+  body::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gradient-to-tr from-slate-700 to-slate-500;
+  }
+}
