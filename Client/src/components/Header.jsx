@@ -24,9 +24,7 @@ const Header = () => {
         </Link>
         <SearchBar />
         <div className="flex text-xl justify-end items-center w-[20%] md:hidden">
-          <div className="mr-10 text-xl text-white">
-            <FaRegBell />
-          </div>
+
           <NavLink
             to="/Blogs"
             className={({isActive})=>
@@ -45,15 +43,15 @@ const Header = () => {
           </NavLink>
           <p
             onClick={() => navigate("/favourite")}
-            className="text-lg font-semibold  ml-3 mr-10 text-slate-50 rounded-lg hover:bg-slate-100 cursor-pointer hover:text-slate-900 "
+            className="p-1 text-lg font-semibold  ml-3 mr-10 text-slate-50 rounded-lg hover:bg-slate-100 cursor-pointer hover:text-slate-900 "
           >
             Favourites
           </p>
           <p
             onClick={handleToggler}
-            className="text-lg font-semibold text-slate-50 cursor-pointer rounded-lg hover:bg-slate-100 hover:text-slate-900"
+            className=" p-1 text-lg font-semibold text-slate-50 cursor-pointer rounded-lg hover:bg-slate-100 hover:text-slate-900"
           >
-            Profile
+           Login
           </p>
         </div>
       </div>

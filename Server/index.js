@@ -10,7 +10,7 @@ const corsOptions = {
   origin: "*",
 };
 
-const mongo = async () => {
+const DatabaseConnection = async () => {
   let DBConnectionInstance="";
   try {
     mongoose.set("strictQuery", false);
@@ -45,6 +45,6 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
-  mongo();
+  DatabaseConnection();
   console.log(`Port successfully started at ${PORT}`);
 });

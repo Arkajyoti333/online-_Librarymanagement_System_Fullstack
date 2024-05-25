@@ -94,7 +94,7 @@ export const getUser = async (req, res, next) => {
 export const getUsers = async (req, res, next) => {
   try {
     const users = await User.find(
-      { isAdmin: false },
+      { isAdmin: true},
       {
         password: 0,
       }

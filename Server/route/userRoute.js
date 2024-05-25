@@ -14,6 +14,11 @@ import {
 
 const router = express.Router();
 
+
+
+// router.get("/li",((req,res)=>{
+//      res.send("This Work Properly");
+// }))
 router.post("/register", registerRoute);
 router.post("/login", loginRoute);
 router.get("/:id", getUser);
