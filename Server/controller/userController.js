@@ -1,6 +1,7 @@
 import User from "../model/userModel.js";
 import bcrypt from "bcrypt";
 
+
 export const registerRoute = async (req, res, next) => {
   const admins = ["admin@123.com"];
   const saltRounds = 10;
@@ -94,7 +95,7 @@ export const getUser = async (req, res, next) => {
 export const getUsers = async (req, res, next) => {
   try {
     const users = await User.find(
-      { isAdmin: true},
+      { isAdmin: false},
       {
         password: 0,
       }

@@ -1,21 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { BsStarFill } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import star from "../assets/star-dynamic-premium.png";
+// import star from "../assets/star-dynamic-premium.png";
 import CardTemplate from "./CardTemplate";
 import { addProgFavBooka, open } from "../action";
 
 const BookSlider = ({ data, title, setFavMsg, setErrMsg }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const toggler = useSelector((state) => state.toggler);
+  // const toggler = useSelector((state) => state.toggler);
   const userInfo = useSelector((state) => state.user);
   const books = useSelector((state) => state.books);
+
   const handleBook = (value) => {
     navigate(`/book/${value?._id}`);
   };
+ const handleReadMore=(value)=>{
+  // console.log("Value is :",value);
+  navigate(`/readMore/${value?._id}`);
+  
+ }
 
   const handleFav = async (value) => {
     try {
@@ -59,13 +65,9 @@ const BookSlider = ({ data, title, setFavMsg, setErrMsg }) => {
                   ></img>
                 </div>
                 <div className="flex justify-between items-center pr-2">
-                  <div className="flex justify-around items-center bg-gradient-to-r from-emerald-600 to-emerald-300 w-max px-2 mt-1 ml-[1px] rounded-sm">
-                    {/* <img
-                      alt={data?.bookImage}
-                      className="w-6 rotate-6 -ml-1"
-                      src={star}
-                    ></img> */}
-                    <p className="ml-1 font-bold text-slate-800">
+                  <div className="flex justify-around items-center bg-gradient-to-r from-blue-500 to-orange-300 w-max px-2 mt-1 ml-[1px] rounded-sm">
+                  <p className="pt-1 font-semibold text-xl">*</p>
+                    <p className="ml-1 px-2 font-bold text-slate-800">
                       {data?.rating}
                     </p>
                   </div>
@@ -87,7 +89,10 @@ const BookSlider = ({ data, title, setFavMsg, setErrMsg }) => {
                 <p className="text-slate-200 text-sm">{data?.authorname}</p>
                 <p className="text-white font-semibold mt-1 ">
                   ₹ {data?.price}/day
-                  <button className="max-w-[130px] mr-0 ml-5 py-0.5">
+                  <button 
+                  className="max-w-[130px] mr-0 ml-5 py-0.5"
+                  onClick={() => handleReadMore(data)}
+                  >
                   Read 
                 </button>
                 </p>

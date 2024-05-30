@@ -1,7 +1,14 @@
+import path from 'path';
 import Books from "../model/bookModel.js";
 import Request from "../model/requestModel.js";
 import User from "../model/userModel.js";
 import Rented from "../model/rentedModel.js";
+import ReadMore from "../model/PdfReadMore.js";
+
+
+
+
+
 
 export const booksRoute = async (req, res, next) => {
   try {
@@ -170,6 +177,41 @@ export const returnedStatChange = async (req, res, next) => {
     );
     await Rented.findByIdAndUpdate({ _id: req.body._id }, { returned: true });
     res.status(200).send("Updated to DB!");
+  } catch (err) {
+    next(err);
+  }
+};
+
+
+export const readMore = async (req, res, next) => {
+  try {
+    const { bookId } = req.body;
+    const pdfFile = req.file.path; // Path to the uploaded PDF file
+
+    const newReadMore = new ReadMore({
+      book: bookId,
+      pdfFile,
+    });
+
+    const savedReadMore = await newReadMore.save();
+    res.status(201).json({
+      message: "ReadMore entry created successfully!",
+      data: savedReadMore,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const getPdfFile = async (req, res, next) => {
+  try {
+    const readMoreEntry = await ReadMore.findOne({ book: req.params.bookId });
+    if (!readMoreEntry) {
+      return res.status(404).json({ message: "PDF file not found" });
+    }
+
+    const filePath = path.resolve(readMoreEntry.pdfFile);
+    res.sendFile(filePath);
   } catch (err) {
     next(err);
   }

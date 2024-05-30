@@ -65,9 +65,9 @@ const SingleBookPage = () => {
       <Header />
       <div
         style={{ position: !toggler?.status ? "relative" : "fixed" }}
-        className="w[100%] h-max pb-20 bg-gradient-to-b from-gray-800 to-gray-700 pt-[80px] overflow-x-hidden"
+        className="w[100%] h-max pb-20 bg-gradient-to-b from-blue-300 pt-[80px] overflow-x-hidden"
       >
-        <div className="overflow-y-hidden relative -left-3 w-[102%] h-[350px] sm:h-[250px] bg-gray-800 -rotate-3 -top-10">
+        <div className="overflow-y-hidden relative -left-3 w-[102%] h-[350px] sm:h-[250px] bg-slate-700 -rotate-3 -top-10">
           <div className="w-[500px] h-[500px] opacity-20 mx-auto sm:w-[350px]">
             <img src={bookImage} alt="book"></img>
           </div>
@@ -87,8 +87,8 @@ const SingleBookPage = () => {
             <span className="text-slate-400 ">by</span>{" "}
             {bookData?.data?.authorname}
           </p>
-          <div className="flex justify-around items-center bg-gradient-to-r from-emerald-600 to-emerald-300 w-max px-2 mt-2 rounded-sm">
-            <img className="w-6 rotate-6 -ml-1" src={star} alt="star"></img>
+          <div className="flex justify-around items-center  shadow-md bg-gradient-to-r from-emerald-600 to-orange-300 w-max px-2 mt-2 rounded-sm">
+          <p className="pt-1 font-semibold text-xl">*</p>
             <p className="ml-1 font-bold text-slate-800">
               {bookData?.data?.rating}
             </p>
@@ -96,7 +96,7 @@ const SingleBookPage = () => {
           <div className="mt-3">
             <button
               onClick={() => handleRequest(bookData?.data)}
-              className="bg-gradient-to-br from-emerald-600 to-emerald-400 p-3 rounded-lg text-black capitalize font-bold shadow-lg"
+              className="bg-gradient-to-br bg-white border-2 border-red-500 text-black p-3 rounded-lg capitalize font-nano shadow-lg"
             >
               Rent @ ₹{bookData?.data?.price}/day
             </button>

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
+// import Header from "../components/Header";
 import MobileNav from "../components/MobileNav";
 import BookSlider from "../components/BookSlider";
 import { useSelector, useDispatch } from "react-redux";
 import { addInitFavBooks } from "../action";
 import axios from "axios";
 import Hero from "../components/HeroSection";
-import Footer from "../components/Footer/Footer";
+// import Footer from "../components/Footer/Footer";
 
 const BooksPage = () => {
   const dispatch = useDispatch();
@@ -54,14 +54,14 @@ const BooksPage = () => {
 
         {/* Personal Growth */}
         <BookSlider
-          data={books?.books?.filter((data) => data.type === "Personal Growth")}
+          data={books?.books?.filter((data) => data.type === "Technical Growth")}
           title={"Technical Growth"}
           setFavMsg={setFavMsg}
           setErrMsg={setErrMsg}
         />
         {/* History */}
         <BookSlider
-          data={books?.books?.filter((data) => data.type === "History")}
+          data={books?.books?.filter((data) => data.type === "Web Devlopment")}
           title={"Web Devlopment"}
           setFavMsg={setFavMsg}
           setErrMsg={setErrMsg}
@@ -69,7 +69,7 @@ const BooksPage = () => {
         {/* Leadership and Entrepreneur */}
         <BookSlider
           data={books?.books?.filter(
-            (data) => data.type === "Leadership & Entrepreneurs"
+            (data) => data.type === "Software Engineering"
           )}
           title={"Software Engineering"}
           setFavMsg={setFavMsg}
@@ -85,7 +85,7 @@ const BooksPage = () => {
         {/* Health and Fitness */}
         <BookSlider
           data={books?.books?.filter(
-            (data) => data.type === "Health and Fitness"
+            (data) => data.type === "Comics"
           )}
           title={"Comics"}
           setFavMsg={setFavMsg}

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addInitFavBooks, deleteFav } from "../action";
-import emptyStore from "../assets/empty-store.svg";
+// import emptyStore from "../assets/empty-store.svg";
 
 const FavouritePage = () => {
   const dispatch = useDispatch();
@@ -80,12 +80,15 @@ const FavouritePage = () => {
                 );
               })
             ) : (
-              <div className="w-[500px] sm:w-[100%] h-[400px] mx-auto mt-20 sm:mt-0">
-                <img className="w-[100%] h-[100%]" src={emptyStore}></img>
-                <p className="text-center text-2xl sm:text-xl sm:-mt-24 text-white font-bold -mt-14">
-                  Favourite list is Empty!
-                </p>
-              </div>
+              <div className=" flex flex-wrap justify-center items-center min-h-[250px] min-w-[400px] sm:w-[350px] xsm:w-[300px] mt-10 ml-52 sm:ml-0">
+              
+
+              <p>
+                <h1 className="text-3xl font-semibold text-white mb-4">
+               your  Favourite list is Empty !
+                </h1>
+              </p>
+            </div>
             )}
           </div>
         </div>

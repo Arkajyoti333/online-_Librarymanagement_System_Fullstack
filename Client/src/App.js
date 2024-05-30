@@ -15,6 +15,10 @@ import Footer from "./components/Footer/Footer.js";
 import Error from "./Pages/Error.js";
 import Blogs from "./Pages/Blogs/Blogs.js";
 import Header from "./components/Header.jsx";
+import Contact from "./Pages/Contact/Contact.js";
+import About from "./Pages/About/About.jsx";
+import ReadMore from "./Pages/ReadMore/ReadMore.js";
+
 
 
 
@@ -47,16 +51,21 @@ const App = () => {
         <Route path="/search" element={<SearchPage />}></Route>
         <Route path="/favourite" element={<FavouritePage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
+        <Route path="/Blogs" element={<Blogs/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
+        <Route path="/about" element={<About/>}></Route>
+
+      
         <Route path="/book/:id" element={<SingleBookPage />}></Route>
         <Route path="/book/request/:id" element={<RequestForm />}></Route>
         <Route path="/admin/dashboard" element={<AdminPage/>}></Route>
-        <Route path="/Blogs" element={<Blogs/>}></Route>
-
+        <Route path="/readMore/:id" element={<ReadMore/>}></Route>
         <Route path="*" element={<Error/>}></Route>
       
       </Routes>
       <div className="flex flex-wrap mx-2 my-3">
       <Footer/>
+        
       </div>
       
     </div>

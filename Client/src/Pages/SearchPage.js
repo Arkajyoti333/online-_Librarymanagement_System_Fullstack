@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import Header from "../components/Header";
 import MobileNav from "../components/MobileNav";
-import emptySearch from "../assets/empty-search.svg";
+// import emptySearch from "../assets/empty-search.svg";
 import { useSelector } from "react-redux";
 import BookCard from "../components/BookCard";
 
@@ -14,14 +14,13 @@ const SearchPage = () => {
     window.scrollTo(0, 0);
   }, []);
   const topics = [
-    "Personal Growth",
-    "Business",
-    "Career and Success",
-    "History",
-    "Lifestyle",
+    "Technical Growth",
+    "Web Devlopment",
+    "Software Engineering",
     "Technology",
+    "Comics",
     "Health and Fitness",
-    "Leadership & Entrepreneurs",
+    "Technologys",
     "Marketing and sales",
   ];
   const [topic, setTopic] = useState("");
@@ -99,7 +98,7 @@ const SearchPage = () => {
         </div>
         <div className="mt-7 md:ml-5 sm:ml-1">
           <p className="text-5xl md:text-4xl sm:text-2xl font-bold text-white ml-80 md:ml-5 sm:ml-1">
-            Related Searches
+            Search Result
           </p>
           <div className="w-[100%] flex flex-wrap justify-start sm:justify-self-start items-center  mt-5 pl-80 md:pl-5 sm:pl-0">
             {searchedData?.length > 0 ? (
@@ -107,8 +106,14 @@ const SearchPage = () => {
                 <BookCard key={idx} data={data} />
               ))
             ) : (
-              <div className="w-[400px] sm:w-[350px] xsm:w-[300px] ml-52 sm:ml-0">
-                <img src={emptySearch} alt="empty"></img>
+              <div className=" flex flex-wrap justify-center items-center min-h-[250px] min-w-[400px] sm:w-[350px] xsm:w-[300px] mt-10 ml-52 sm:ml-0">
+               
+
+                <p>
+                  <h1 className="text-3xl font-bold text-green-500 mb-4">
+                    Please search and find your favorite book.......
+                  </h1>
+                </p>
               </div>
             )}
           </div>

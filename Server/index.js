@@ -31,6 +31,7 @@ const DatabaseConnection = async () => {
 // MIDDLEWARES.
 app.use(cors(corsOptions));
 app.use(express.json()); // To validate json objects.
+app.use('/uploads', express.static('uploads')); // Serve static files from the 'uploads' directory
 app.use("/user", userRoute); // user routes.
 app.use("/books", bookRoute); // book routes.
 

@@ -53,6 +53,6 @@
     @apply bg-gradient-to-b from-slate-100 to-gray-100;
   }
   body::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-gradient-to-tr from-slate-700 to-slate-500;
+    @apply rounded-full bg-gradient-to-tr from-slate-400 to-slate-300;
   }
 }

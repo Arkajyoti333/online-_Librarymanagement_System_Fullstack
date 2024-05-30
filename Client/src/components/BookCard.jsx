@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
-import star from "../assets/star-dynamic-premium.png";
 
 const BookCard = ({ data, clear, delFav }) => {
   const navigate = useNavigate();
@@ -25,9 +24,10 @@ const BookCard = ({ data, clear, delFav }) => {
       </div>
       <div className="mt-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center bg-gradient-to-r from-emerald-600 to-emerald-300 px-2 py-1 rounded-md">
-            <img className="w-5 h-5" src={star} alt="star" />
-            <p className="ml-1 text-slate-800 font-semibold">{data?.rating}</p>
+          <div className="flex items-center bg-gradient-to-r from-orange-600 to-orange-300 px-2 py-1 rounded-md">
+         
+            <p className="pt-1 font-semibold text-xl">*</p>
+            <p className="ml-1 p-1 text-slate-800 font-semibold">{data?.rating}</p>
           </div>
           {clear && (
             <div

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import createImg from "../../assets/Create-amico.svg";
+// import createImgs from "../../assets/Create-amico.svg";
+import createImgs from "../../assets/pexels-nitin-arya-386173-1029141-removebg-preview.png";
 import axios from "axios";
 
 const className =
@@ -104,13 +105,14 @@ const CreateBook = () => {
         <button
           value="submit"
           type="submit"
-          className="bg-pink-700 px-4 py-3 w-[400px] sm:w-[90%] mb-3 text-white rounded-2xl outline-none"
+          className="bg-white  text-lg px-4 py-3 w-[400px] sm:w-[90%] mb-3 text-black rounded-2xl outline-none"
         >
           Create Book
         </button>
       </form>
-      <div className="sm:hidden w-[500px] sm:w-[100%] sm:h-[300px] h-[500px]">
-        <img className="w-[100%] h-[100%]" src={createImg}></img>
+      <div className="sm:hidden w-[500px] sm:w-[100%] sm:h-[300px] h-[500px] overflow-hidden px-3">
+        <img className="w-[100%] h-[100%] overflow-hidden rounded-md mx-3 shadow-none" src={createImgs}></img>
+        {/* <img className="w-[100%] h-[100%] overflow-hidden rounded-md mx-3 shadow-none" src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img> */}
       </div>
     </div>
   );
